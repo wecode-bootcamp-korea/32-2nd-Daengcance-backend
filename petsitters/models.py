@@ -7,6 +7,7 @@ class Petsitter(TimeStampModel):
     title       = models.CharField(max_length=150)
     price       = models.DecimalField(max_digits=8, decimal_places=2)
     grade       = models.CharField(max_length=45)
+    count       = models.PositiveIntegerField(default=0)
     information = models.TextField(max_length=2000)
     address     = models.CharField(max_length=100)
     longitude   = models.DecimalField(max_digits=9, decimal_places=6)
