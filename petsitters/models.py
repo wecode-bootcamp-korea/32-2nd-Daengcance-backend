@@ -12,6 +12,7 @@ class Petsitter(TimeStampModel):
     longitude   = models.DecimalField(max_digits=9, decimal_places=6)
     latitude    = models.DecimalField(max_digits=9, decimal_places=6)
     types       = models.ManyToManyField('Type', through='PetsitterType')
+    count       = models.PositiveIntegerField()
 
     class Meta:
         db_table = 'petsitters'
