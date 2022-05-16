@@ -12,7 +12,7 @@ class Petsitter(TimeStampModel):
     address     = models.CharField(max_length=100)
     longitude   = models.DecimalField(max_digits=9, decimal_places=6)
     latitude    = models.DecimalField(max_digits=9, decimal_places=6)
-    types       = models.ManyToManyField('Type', through='PetsitterType')
+    type        = models.ManyToManyField('Type', through='PetsitterType')
 
     class Meta:
         db_table = 'petsitters'

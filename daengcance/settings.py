@@ -1,6 +1,6 @@
 
 from pathlib import Path
-from my_settings import DATABASES, SECRET_KEY
+from my_settings import ALGORITHM, DATABASES, SECRET_KEY
 
 import pymysql
 
@@ -143,3 +143,5 @@ CORS_ALLOW_HEADERS = (
 )
 
 APPEND_SLASH = False
+
+ALGORITHM = ALGORITHM
