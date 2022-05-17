@@ -19,7 +19,7 @@ class Petsitter(TimeStampModel):
 
 class PetsitterImage(models.Model):
     petsitter_image_url = models.CharField(max_length=1000)
-    petsitter_id        = models.ForeignKey('petsitter', on_delete=models.CASCADE)
+    petsitter           = models.ForeignKey('petsitter', on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'petsitter_images'
@@ -31,16 +31,16 @@ class Type(models.Model):
         db_table = 'types'
 
 class PetsitterType(models.Model):
-    petsitter_id = models.ForeignKey('Petsitter', on_delete=models.CASCADE)
-    type_id      = models.ForeignKey('Type', on_delete=models.CASCADE)
+    petsitter = models.ForeignKey('Petsitter', on_delete=models.CASCADE)
+    type      = models.ForeignKey('Type', on_delete=models.CASCADE)
     
     class Meta:
         db_table = 'petsitter_types'
 
 class Comment(TimeStampModel):
-    content      = models.CharField(max_length=1000, blank=True)
-    user_id      = models.ForeignKey('users.User', on_delete=models.CASCADE)
-    petsitter_id = models.ForeignKey('Petsitter', on_delete=models.CASCADE)
+    content   = models.CharField(max_length=1000, blank=True)
+    user      = models.ForeignKey('users.User', on_delete=models.CASCADE)
+    petsitter = models.ForeignKey('Petsitter', on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'comments' 
