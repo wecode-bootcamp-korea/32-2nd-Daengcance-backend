@@ -34,7 +34,7 @@ class PetsitterListView(View):
         q = Q()
 
         if type_id:
-            q &= Q(type__id = type_id)
+            q &= Q(types__id = type_id)
 
         if keyword:
             q &= Q(address__icontains = keyword)
